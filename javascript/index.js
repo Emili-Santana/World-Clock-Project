@@ -46,7 +46,9 @@ function updatecity(event) {
 
   let cityTime = moment().tz(cityTimeZone);
   let citiesElement = document.querySelector("#cities");
-  citiesElement.innerHTML = `
+  citiesElement.innerHTML +=
+    // + show several cities at the same time
+    `
   <div class="city">
             <div>
                 <h2>${cityName} </h2>
