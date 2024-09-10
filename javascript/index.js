@@ -23,13 +23,13 @@ function citiesTime() {
       nyTimeElement.innerHTML = nyTime.format("h:mm:ss [<small>]A[</small>]");
     }
   }
-  //toronto
+  //madrid
 
-  let portoElement = document.querySelector("#toronto");
+  let portoElement = document.querySelector("#madrid");
   if (portoElement) {
     let portoDateElement = portoElement.querySelector(".date");
     let portoTimeElement = portoElement.querySelector(".time");
-    let portoTime = moment().tz("America/Toronto");
+    let portoTime = moment().tz("Europe/Madrid");
 
     portoDateElement.innerHTML = portoTime.format("MMMM	Do YYYY");
     portoTimeElement.innerHTML = portoTime.format(
