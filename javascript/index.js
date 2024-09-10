@@ -1,3 +1,4 @@
+//funtion for updade the for local time using moment.js
 function citiesTime() {
   // Los Angeles
   let londonElement = document.querySelector("#london");
@@ -22,13 +23,13 @@ function citiesTime() {
       nyTimeElement.innerHTML = nyTime.format("h:mm:ss [<small>]A[</small>]");
     }
   }
-  //porto
+  //toronto
 
-  let portoElement = document.querySelector("#lisbon");
+  let portoElement = document.querySelector("#toronto");
   if (portoElement) {
     let portoDateElement = portoElement.querySelector(".date");
     let portoTimeElement = portoElement.querySelector(".time");
-    let portoTime = moment().tz("Europe/Lisbon");
+    let portoTime = moment().tz("America/Toronto");
 
     portoDateElement.innerHTML = portoTime.format("MMMM	Do YYYY");
     portoTimeElement.innerHTML = portoTime.format(
@@ -42,12 +43,15 @@ setInterval(citiesTime, 1000);
 // update the information when we change the city on dropdown
 function updatecity(event) {
   let cityTimeZone = event.target.value;
+  if (cityTimeZone === "current") {
+    cityTimeZone = moment.tz.guess();
+  }
   let cityName = cityTimeZone.replace("_", " ").split("/")[1]; // hidden the underscore and the continent
 
   let cityTime = moment().tz(cityTimeZone);
   let citiesElement = document.querySelector("#cities");
-  citiesElement.innerHTML +=
-    // + show several cities at the same time
+  citiesElement.innerHTML =
+    // "+" before = show several cities at the same time
     `
   <div class="city">
             <div>
