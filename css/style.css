@@ -55,12 +55,6 @@ select {
   line-height: 36px;
 }
 
-button {
-  background-color: #f9f7fe;
-  border-radius: 5px;
-  font-size: 15px;
-  margin-bottom: 10px;
-}
 footer {
   text-align: center;
   font-size: 18px;
